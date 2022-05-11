@@ -1,0 +1,52 @@
+<h1>
+  Rails request.remote_ip debugger
+</h1>
+
+<p>
+  ActionPack's "request.remote_ip" returns the wrong value on Render.com. We check what Rails' request.env returns to fix this issue.
+</p>
+
+<div class ="container">
+  <div class ="field">
+    request.remote_ip returns:
+  </div>
+  <div class ="field value">
+    <%= @remote_ip || "---" %>
+  </div>
+</div>
+
+<div class ="container">
+  <div class ="field">
+    request.env['HTTP_X_FORWARDED_FOR'] returns:
+  </div>
+  <div class ="field value">
+    <%= @http_x_forwarded_for || "---" %>
+  </div>
+</div>
+
+<div class ="container">
+  <div class ="field">
+    request.env['HTTP_TRUE_CLIENT_IP'] returns:
+  </div>
+  <div class ="field value">
+    <%= @http_true_client_ip || "---" %>
+  </div>
+</div>
+
+<div class ="container">
+  <div class ="field">
+    request.env['REMOTE_ADDR'] returns:
+  </div>
+  <div class ="field value">
+    <%= @remote_addr || "---" %>
+  </div>
+</div>
+
+<div class ="container">
+  <div class ="field">
+    This is the full request.env:
+  </div>
+  <div class ="field value">
+    <%= @request_env || "---" %>
+  </div>
+</div>
