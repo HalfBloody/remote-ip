@@ -49,9 +49,20 @@
 
 <div class ="container">
   <div class ="field">
-    This is the full request.env:
+    This is the full request.headers:
   </div>
   <div class ="field value">
-    <%= @request_env || "---" %>
+    <%= @request_headers || "---" %>
   </div>
 </div>
+
+<% @request_env.each do |k, v| %>
+  <div class ="container">
+    <div class ="field">
+      This is the <%= k %> request.env:
+    </div>
+    <div class ="field value">
+      <%= v || "---" %>
+    </div>
+  </div>
+<% end %>
