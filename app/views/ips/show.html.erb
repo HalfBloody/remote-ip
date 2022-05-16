@@ -1,9 +1,14 @@
 <h1>
-  Rails request.remote_ip debugger
+  Rails' request.remote_ip isn't returning the correct value on <a href="https://render.com">Render.com</a>
 </h1>
 
 <p>
-  ActionPack's "request.remote_ip" returns the wrong value on Render.com. We check what Rails' request.env returns to fix this issue.
+  ActionPack's "request.remote_ip" returns the wrong value on Render.com. Let's check what Rails' request.env returns to fix this issue.
+</p>
+
+<p>
+  <%= "This is a vanilla Rails installation of Rails #{Rails.version} on Render.com based on " %>
+  <a href="https://github.com/HalfBloody/remote-ip">this repo</a>
 </p>
 
 <div class ="container">
