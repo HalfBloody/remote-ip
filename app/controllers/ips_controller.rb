@@ -10,6 +10,6 @@ class IpsController < ApplicationController
     @http_x_forwarded_for = request.env['HTTP_X_FORWARDED_FOR']
     @remote_addr = request.env['REMOTE_ADDR']
     @request_env = request.env
-    @request_headers = request.headers
+    @request_headers = request.headers.inspect
   end
 end

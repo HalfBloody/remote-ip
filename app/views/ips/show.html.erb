@@ -52,17 +52,22 @@
     This is the full request.headers:
   </div>
   <div class ="field value">
-    <%= @request_headers || "---" %>
+    <%= @request_headers.inspect || "---" %>
   </div>
 </div>
 
 <% @request_env.each do |k, v| %>
-  <div class ="container">
+    <%= link_to k, "##{k} " %>
+<% end %>
+
+
+<% @request_env.each do |k, v| %>
+  <div id="<%= k %>" class ="container">
     <div class ="field">
-      This is the <%= k %> request.env:
+      request.env['<%= k %>']:
     </div>
     <div class ="field value">
-      <%= v || "---" %>
+      <%= v.inspect || "---" %>
     </div>
   </div>
 <% end %>
