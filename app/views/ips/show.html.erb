@@ -3,7 +3,19 @@
 </h1>
 
 <p>
-  ActionPack's "request.remote_ip" returns the wrong value on Render.com. Let's check what Rails' request.env returns to fix this issue.
+  I would expect request.remote_ip to be equal to the first value of request.env['HTTP_X_FORWARDED_FOR'], but this is not the case. Instead the first value is ignored and second value is returned instead.
+</p>
+
+<p>
+  You can check your real ip address at <a href="https://whatismyipaddress.com/">https://whatismyipaddress.com/</a>.
+</p>
+
+<p>
+  ActionPack's "request.remote_ip" returns the wrong value on Render.com. Below are just all kinds of headers of the request printed out for debugging.
+</p>
+
+<p>
+  Here is the Rails implementation of <code>remote_ip</code>. I checked it and couldn't understand why it would ignore the first value. Maybe somebody knows more.
 </p>
 
 <p>
